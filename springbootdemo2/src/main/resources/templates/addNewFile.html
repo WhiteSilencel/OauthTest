@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>addNewFile</title>
+</head>
+<body>
+
+<form action="/oauth/addNewFileSubmit" method="post">
+    <h3>请选择已授权的项目：</h3>
+    <!--/*@thymesVar id="lists" type=""*/-->
+    <select name="projectPathName">
+        <option th:each="allProjects,allProjectsStat:${lists}" th:value="${allProjects.path}">
+            <!--/*@thymesVar id="path" type=""*/-->
+            <span  th:text="${allProjects.path}"></span>
+        </option>
+    </select><hr/>
+
+    <h3>请输入文件路径（路径）：</h3>
+    <br/>
+    <input type="text" name="path" /><hr/>
+    <h3>请输入文件内容（content自动转换为base64）：</h3>
+    <br/>
+    <input type="text" name="content" /><hr/>
+    <h3>请输入更新信息（message）：</h3>
+    <br/>
+    <textarea rows="3" cols="20" name="message"></textarea><hr/>
+    <input type="submit" value="提交"/>
+</form>
+
+</body>
+</html>

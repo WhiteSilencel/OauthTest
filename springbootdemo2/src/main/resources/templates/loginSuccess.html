@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h1 th:inline="text">您已成功登陆，请选择如下操作</h1><hr/>
+<!--/*@thymesVar id="accessToken" type=""*/-->
+<a href="/oauth/addNewFile">新建文件</a><hr/>
+<a href="/oauth/selectProject">更新文件</a><hr/>
+</body>
+</html>

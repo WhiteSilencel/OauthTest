@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>addNewFile</title>
+</head>
+<body>
+
+<form action="/oauth/selectFile" method="post">
+    <h3>请选择已授权的项目：</h3>
+    <!--/*@thymesVar id="lists" type=""*/-->
+    <select name="projectPathName">
+        <option th:each="allProjects,allProjectsStat:${lists}" >
+            <!--/*@thymesVar id="path" type=""*/-->
+            <span  th:text="${allProjects.path}" th:value="${allProjects.path}"></span>
+        </option>
+    </select>
+    <br/><br/>
+    <h3>请输入sha值（项目分支，一般为master）</h3>
+    <input type="text" name="sha"/>
+    <hr/>
+    <input type="submit" th:value="提交"/>
+</form>
+
+</body>
+</html>

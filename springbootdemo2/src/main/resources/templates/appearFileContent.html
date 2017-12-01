@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h3 th:inline="text">文件路径是</h3><br/>
+<textarea rows="4" cols="10" th:text="${path}">
+
+</textarea>
+<hr/>
+<h3 th:inline="text">文件内容是</h3><br/>
+<textarea rows="4" cols="20" th:text="${content}">
+
+</textarea>
+<hr/>
+<a href="/oauth/login">点击返回首页</a>
+</body>
+</html>

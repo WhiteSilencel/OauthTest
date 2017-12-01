@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h3 th:inline="text">文件:</h3><hr/>
+<!--/*@thymesVar id="accessToken" type=""*/-->
+<form action="/oauth/updateFileSubmit" method="post">
+    <input type="hidden" name="sha" th:value="${sha}"/>
+    <input type="hidden" name="projectPathName" th:value="${projectPathName}"/>
+
+    <h3>文件名(不可修改)</h3><br/>
+    <textarea rows="2" cols="10" name="path" th:text="${path}">
+
+    </textarea>
+    <hr/>
+    <h3>文件内容</h3><br/>
+    <textarea rows="4" cols="20" name="content" th:text="${content}">
+
+    </textarea>
+    <hr/>
+    <h3>更新信息</h3><br/>
+    <textarea rows="4" cols="20" name="message"></textarea>
+    <hr/>
+    <input type="submit" value="提交"/>
+    <br/>
+</form>
+
+<a href="/oauth/login">点击返回首页</a>
+</body>
+</html>

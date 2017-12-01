@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.oauth.dao.DiaryMapper" >
+    <insert id="insertDiary" parameterType="com.example.oauth.model.Diary" >
+        INSERT INTO
+        t_diaries
+        (name,date)
+        VALUES
+        (#{name}, #{date})
+    </insert>
+</mapper>

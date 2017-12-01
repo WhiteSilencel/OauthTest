@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>addNewFile</title>
+</head>
+<body>
+    <h3>请选择<p th:text="${projectPathName}"></p>下的项目：</h3><br/>
+    <!--/*@thymesVar id="lists" type=""*/-->
+        <table width="400" border="1">
+            <tr>
+                <td>文件名</td>
+                <td><center>sha值</center></td>
+                <td>look</td>
+                <td>update</td>
+                <td>delete</td>
+            </tr>
+            <tr th:each="allFiles,allFilesStat:${fileList}">
+                <td><p th:text="${allFiles.path}"></p></td>
+                <td><p th:text="${allFiles.sha}"></p> </td>
+                <td><a th:href="@{'/oauth/getContent?sha='+${allFiles.sha}+'&amp;repo='+${projectPathName}+'&amp;path='+${allFiles.path}}">look</a></td>
+                <td><a th:href="@{'/oauth/updateFile?sha='+${allFiles.sha}+'&amp;path='+${allFiles.path}+'&amp;projectPathName='+${projectPathName}}">update</a></td>
+                <td><a th:href="@{'/oauth/deleteFile?message=delete&amp;sha='+${allFiles.sha}+'&amp;path='+${allFiles.path}+'&amp;projectPathName='+${projectPathName}}">delete</a></td>
+            </tr>
+        </table>
+    <hr/>
+
+</body>
+</html>
