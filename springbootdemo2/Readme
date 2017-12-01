@@ -1,8 +1,12 @@
 案例简介：
 
 1.此案例仅作为初学者演练，通过调用代码托管平台——码云API完成文件的增删查改，码云链接：https://gitee.com/
+
 2.项目打开路径为 springbootdemo2/src/main/java/com/example/oauth
+
 3.项目依赖的开发工具及框架：IDEAL  MAVEN仓库  SpringBoot  Thymeleaf  Mybatis
+
 4.通过指定url访问码云的接口，完成第三方认证：https://gitee.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code
   笔者给出测试地址：https://gitee.com/oauth/authorize?client_id=c9e14b1811c64b29361641993ed69d09a69a17fc61341610dfc5f14539992e38&redirect_uri=http://localhost:8080/gitee/redirect&response_type=code
+
 5.笔者入行尚浅，不足之处欢迎指正。
